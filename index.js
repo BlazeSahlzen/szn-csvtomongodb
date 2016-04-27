@@ -1,33 +1,12 @@
 'use strict';
 
 /**
- * [csvtomongodb description]
+ * The core csvtomongodb package
  */
-var csvtomongodb = require('./lib');
+var csvtomongodb_core = require('./lib');
 
-/**
- * The file path leading to CSV file
- * @type {String}
- */
-var filePath = "./samples/propertyRating-insertion.csv"; // sensitive to change
+module.exports = function(options, cb) {
 
-/**
- * The CSVtoMongoDB mapping table
- * @type {Object}
- */
-var mappingTable = require("./maps/propertyRating_insertion_map");
+    csvtomongodb_core(options, cb);
 
-/**
- * MongoDB config and schema information
- * @type {Object}
- */
-// var db = {
-//     config: {},
-//     schema: require("")
-// };
-
-csvtomongodb({
-    filePath: filePath,
-    mappingTable: mappingTable,
-    // db: db
-});
+};
